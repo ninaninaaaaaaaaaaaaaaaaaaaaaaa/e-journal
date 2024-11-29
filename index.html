@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Журнал</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Сторінка авторизації -->
+        <div class="login-page" id="login-page">
+            <h2>Авторизація</h2>
+            <form id="login-form">
+                <label for="username">Логін</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Увійти</button>
+                <p id="login-error" style="color: red; display: none;">Невірний логін або пароль!</p>
+            </form>
+        </div>
+
+        <!-- Журнал -->
+        <div class="journal-page" id="journal-page" style="display: none;">
+            <h2>Журнал</h2>
+            <label for="group">Вибір групи:</label>
+            <select id="group" name="group">
+                <option value="1">1 курс</option>
+                <option value="2">2 курс</option>
+            </select>
+
+            <label for="subject">Вибір предмету:</label>
+            <select id="subject" name="subject">
+                <option value="algorithms">Алгоритмізація та програмування</option>
+                <option value="informatics">Інформатика</option>
+            </select>
+
+            <button onclick="loadTable()">Завантажити таблицю</button>
+
+            <!-- Таблиця для введення/перегляду балів -->
+            <table id="students-table">
+                <thead>
+                    <tr>
+                        <th>Прізвище та ім'я</th>
+                        <th>Заняття 1</th>
+                        <th>Заняття 2</th>
+                        <th>Заняття 3</th>
+                        <th>Заняття 4</th>
+                        <th>Заняття 5</th>
+                        <th>Заняття 6</th>
+                        <th>Заняття 7</th>
+                        <th>Заняття 8</th>
+                        <th>Заняття 9</th>
+                        <th>Заняття 10</th>
+                        <th>За семестр</th>
+                    </tr>
+                </thead>
+                <tbody id="students-table-body"></tbody>
+            </table>
+
+            <button id="save-button" style="display: none;" onclick="saveData()">Зберегти зміни</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
